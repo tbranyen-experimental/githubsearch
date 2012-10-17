@@ -1,0 +1,9 @@
+<header class="container">
+    <div class="center caption">Github Search</div>
+    <hr class="soften" style="margin-left:auto;margin-right:auto; width:1000px;">
+    <div class="center small">users, repos, issues, pull requests and stuff.</div>
+    <form class="search-box" {{action search on="submit"}}>
+        {{view Ember.TextField placeholder="what are you looking for?" class="search-input"}}
+        <i class="search-icon icon-large icon-search"></i>
+    </form>
+</header>

@@ -1,6 +1,6 @@
 define([
-        "Ember"
+        'Ember'
        ],
 function (Ember) {
-    GithubSearch.ApplicationController = Ember.ApplicationController.extend();
+    GSearch.ApplicationController = Ember.Controller.extend();
 });

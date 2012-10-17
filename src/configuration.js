@@ -1,18 +1,19 @@
 requirejs.config({
-    deps: ["githubsearch"],
+    deps: ['application'],
     paths: {
-        jquery: "libs/jquery",
-        Handlebars: "libs/handlebars",
-        Ember: "libs/ember",
-        text: "libs/text"
+        templates: './templates',
+        Ember: 'libs/ember',
+        Handlebars: 'libs/handlebars',
+        jQuery: 'libs/jquery',
+        text: 'libs/text'
     },
     shim: {
         Handlebars: {
-            exports: "Handlebars"
+            exports: 'Handlebars'
         },
         Ember: {
-            deps: ["jquery", "Handlebars"],
-            exports: "Ember"
+            deps: ['jQuery', 'Handlebars'],
+            exports: 'Ember'
         }
     }
 });

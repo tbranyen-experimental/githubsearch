@@ -1,27 +1,42 @@
-/*global define, Ember*/
-define([
-        "Ember",
-        "controllers/applicationController",
-        "controllers/issueController",
-        "controllers/repoController",
-        "controllers/userController",
+define(
+    [
+        'Ember',
 
-        "views/applicationView"
-       ],
+        './controllers/applicationController',
+        './controllers/searchBoxController',
+        './controllers/recentSearchesController',
+
+        './views/applicationView',
+        './views/searchBoxView',
+        './views/recentSearchesView'
+    ],
 function (Ember) {
-    "use strict";
-
     var router = Ember.Router.extend({
-        enableLogging: true,
         root: Ember.Route.extend({
+            enableLogging: true,
+
             index: Ember.Route.extend({
-                route: "/"
+                route: '/',
+                connectOutlets: function (router) {
+                    var applicationController = router.get('applicationController');
+
+                    applicationController.connectOutlet({
+                        outletName: 'searchBox',
+                        name: 'searchBox'
+                    });
+
+                    applicationController.connectOutlet({
+                        outletName: 'recentSearches',
+                        name: 'recentSearches'
+                    });
+                }
             }),
+
             search: Ember.Route.extend({
-                route: "/search/:query"
+                route: '/search/:term'
             })
+
         })
     });
-
     return router;
 });
