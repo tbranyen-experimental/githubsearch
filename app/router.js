@@ -33,7 +33,7 @@ function (Ember) {
             }),
 
             search: function(router) {
-                var query = router.getPath('searchBoxController.term');
+                var query = router.get('searchBoxController.term');
                 router.transitionTo('results', query);
             },
 
@@ -42,10 +42,20 @@ function (Ember) {
 
                 connectOutlets: function (router, query) {
                     var applicationController = router.get('applicationController');
-                    applicationController.connectOutlet('results');
-                    router.get('resultsController').fetch(query);
-                }
+                    applicationController.connectOutlet('repos');
+                    router.get('reposController').fetch(query);
+                },
 
+                serialize: function (router, context) {
+                    return {
+                        query: context
+                    };
+                },
+
+                deserialize: function (router, params) {
+                    return params.query;
+                }
+            })
         })
     });
     return router;

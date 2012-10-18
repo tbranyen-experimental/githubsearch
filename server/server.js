@@ -26,8 +26,8 @@ module.exports = function (options) {
         fs.createReadStream(options.baseDir + 'app/index.html').pipe(response);
     });
 
-    server.get('/_api/search/repos/:repo', function (request, response) {
-        search.get('/legacy/repos/search/' + request.params.repo, function (error, status, data) {
+    server.get('/_api/search/repos/', function (request, response) {
+        search.get('/legacy/repos/search/' + request.query.term, function (error, status, data) {
             response.end(JSON.stringify(data));
         });
     });
