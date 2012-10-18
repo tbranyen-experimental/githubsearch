@@ -1,4 +1,4 @@
-var search          = require('octonode'),
+var search          = require('octonode').client(),
     express         = require('express'),
     _               = require('underscore'),
     fs              = require('fs'),
@@ -24,6 +24,30 @@ module.exports = function (options) {
 
     server.get('/', function (request, response) {
         fs.createReadStream(options.baseDir + 'app/index.html').pipe(response);
+    });
+
+    server.get('/_api/search/repos/:repo', function (request, response) {
+        search.get('/legacy/repos/search/' + request.params.repo, function (error, status, data) {
+            response.end(JSON.stringify(data));
+        });
+    });
+
+    server.get('/_api/search/users/:user', function (request, response) {
+        search.get('/users/' + request.params.user, function (error, status, data) {
+            response.end(JSON.stringify(data));
+        });
+    });
+
+    server.get('/_api/search/:user/:repo/issues', function (request, response) {
+        search.get('/repos/' + request.params.user + '/' + request.params.repo + '/issues', function (error, status, data) {
+            response.end(JSON.stringify(data));
+        });
+    });
+
+    server.get('/_api/search/:user/:repo/pulls', function (request, response) {
+        search.get('/repos/' + request.params.user + '/' + request.params.repo + '/pulls', function (error, status, data) {
+            response.end(JSON.stringify(data));
+        });
     });
 
     server.listen(options.port || null);
