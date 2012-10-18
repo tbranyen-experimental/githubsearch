@@ -32,9 +32,19 @@ function (Ember) {
                 }
             }),
 
-            search: Ember.Route.extend({
-                route: '/search/:term'
-            })
+            search: function(router) {
+                var query = router.getPath('searchBoxController.term');
+                router.transitionTo('results', query);
+            },
+
+            results: Ember.Route.extend({
+                route: '/seach/:query',
+
+                connectOutlets: function (router, query) {
+                    var applicationController = router.get('applicationController');
+                    applicationController.connectOutlet('results');
+                    router.get('resultsController').fetch(query);
+                }
 
         })
     });
