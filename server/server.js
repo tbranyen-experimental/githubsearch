@@ -11,7 +11,7 @@ module.exports = function (options) {
     }, options || {});
 
     server.get('/', function (request, response) {
-        fs.createReadStream(options.baseDir + 'index.html').pipe(response);
+        fs.createReadStream(options.baseDir + 'app/index.html').pipe(response);
     });
 
     server.listen(options.port || null);
