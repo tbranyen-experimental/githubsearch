@@ -1,6 +1,6 @@
 # Github Search
 
-This application is an attempt to enhance Github Search. User enters a search term
+This application is my attempt to learn EmberJs and enhance Github Search. User enters a search term
 and gets back with results (issues, repos, users, pull requests).
 It's based on:
 
