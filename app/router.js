@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 define([
         'Ember',
 
@@ -39,15 +40,66 @@ function (Ember) {
                 connectOutlets: function (router, queryTerm) {
                     router.get('applicationController').connectOutlet('results');
                     router.get('resultsController').fetch(queryTerm);
+=======
+define(
+    [
+        'Ember',
+
+        './controllers/applicationController',
+        './controllers/recentSearchesController',
+        './controllers/resultsController',
+        './controllers/searchBoxController',
+
+        './views/applicationView',
+        './views/recentSearchesView',
+        './views/resultView',
+        './views/resultsView',
+        './views/searchBoxView'
+    ],
+function (Ember) {
+    var router = Ember.Router.extend({
+        root: Ember.Route.extend({
+            enableLogging: true,
+
+            index: Ember.Route.extend({
+                route: '/',
+                connectOutlets: function (router) {
+                    var applicationController = router.get('applicationController');
+
+                    applicationController.connectOutlet({
+                        outletName: 'searchBox',
+                        name: 'searchBox'
+                    });
+                }
+            }),
+
+            search: function(router) {
+                var query = router.get('searchBoxController.term');
+                router.transitionTo('results', query);
+            },
+
+            results: Ember.Route.extend({
+                route: '/search/:query',
+
+                connectOutlets: function (router, query) {
+                    var applicationController = router.get('applicationController');
+                    applicationController.connectOutlet('results');
+                    router.get('resultsController').fetch(query);
+>>>>>>> b1cbcef60487a49e15e3670834586252039e4451
                 },
 
                 serialize: function (router, context) {
                     return {
+<<<<<<< HEAD
                         queryTerm: context
+=======
+                        query: context
+>>>>>>> b1cbcef60487a49e15e3670834586252039e4451
                     };
                 },
 
                 deserialize: function (router, params) {
+<<<<<<< HEAD
                     return params.queryTerm;
                 }
             })
@@ -55,5 +107,12 @@ function (Ember) {
         })
     });
 
+=======
+                    return params.query;
+                }
+            })
+        })
+    });
+>>>>>>> b1cbcef60487a49e15e3670834586252039e4451
     return router;
 });
