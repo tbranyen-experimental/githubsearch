@@ -52,8 +52,4 @@ module.exports = function (options) {
 
     server.listen(options.port || null);
     console.log("Running at http://localhost:" + (options.port || ''));
-<<<<<<< HEAD
 };
-=======
-};
->>>>>>> b1cbcef60487a49e15e3670834586252039e4451
