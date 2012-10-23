@@ -27,7 +27,8 @@
 }
 
 .search-results {
-  width: 940px;
+  width: 960px;
+  margin: 0 auto;
 }
 
 .user  {
@@ -90,8 +91,18 @@
   margin-left: 10px;
 }
 
+.loading {
+  font-size: 20px;
+  width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 200;
+  margin-top: 20px;
+}
+
 .search-item {
   margin-bottom: 15px;
+  display: inline-block;
 }
 
 .span10 {

@@ -3,12 +3,15 @@ define(
         'Ember',
 
         './controllers/applicationController',
-        './controllers/searchBoxController',
         './controllers/recentSearchesController',
+        './controllers/resultsController',
+        './controllers/searchBoxController',
 
         './views/applicationView',
-        './views/searchBoxView',
-        './views/recentSearchesView'
+        './views/recentSearchesView',
+        './views/resultView',
+        './views/resultsView',
+        './views/searchBoxView'
     ],
 function (Ember) {
     var router = Ember.Router.extend({
@@ -24,11 +27,6 @@ function (Ember) {
                         outletName: 'searchBox',
                         name: 'searchBox'
                     });
-
-                    applicationController.connectOutlet({
-                        outletName: 'recentSearches',
-                        name: 'recentSearches'
-                    });
                 }
             }),
 
@@ -38,12 +36,12 @@ function (Ember) {
             },
 
             results: Ember.Route.extend({
-                route: '/seach/:query',
+                route: '/search/:query',
 
                 connectOutlets: function (router, query) {
                     var applicationController = router.get('applicationController');
-                    applicationController.connectOutlet('repos');
-                    router.get('reposController').fetch(query);
+                    applicationController.connectOutlet('results');
+                    router.get('resultsController').fetch(query);
                 },
 
                 serialize: function (router, context) {

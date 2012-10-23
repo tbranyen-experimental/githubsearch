@@ -15,3 +15,5 @@ It's based on:
 2. Run `npm install` from root directory of the project to load the dependencies.
 3. To run the server: `node server/server.js`
 4. [Visit the app in your browser](http://localhost:9999).
+
+Big thanks to <a href="https://github.com/rmurphey">Rebecca Murphy</a> for <a href="https://github.com/rmurphey/srchr-ember">srchr-ember</a>.
