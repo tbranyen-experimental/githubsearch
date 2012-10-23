@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="search-results">
+        {{#if controller.length}}
+            {{#each controller}}
+                {{view GithubSearch.ResultView}}
+            {{/each}}
+        {{else}}
+            <section>
+                <div class="loading">Loading ...</div>
+            </section>
+        {{/if}}
+    </div>
+</div>
