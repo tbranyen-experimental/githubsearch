@@ -14,7 +14,7 @@ It's based on:
 1. [Follow the instructions](http://nodejs.org/#download) and install NodeJs.
    For Mac users: use [Homebrew](http://mxcl.github.com/homebrew/) and type `brew install node`.
 2. Run `npm install` from root directory of the project to load the dependencies.
-3. To run the server: `node server/server.js`
+3. To run the server: `node server/dev`
 4. [Visit the app in your browser](http://localhost:9999).
 
 Big thanks to <a href="https://github.com/rmurphey">Rebecca Murphy</a> for <a href="https://github.com/rmurphey/srchr-ember">srchr-ember</a>.
