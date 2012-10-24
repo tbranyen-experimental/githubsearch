@@ -2,31 +2,31 @@
     <div class="span10">
         <div class="title">
             <i class="icon-book"></i>
-            <a href="https://github.com/{{owner}}/{{name}}">{{name}}</a>
+            <a {{bindAttr href="repoUrl"}}>{{name}}</a>
             by
-            <a href="https://api.gitbub.com/users/{{owner}}">{{owner}}</a>
+            <a {{bindAttr href="ownerUrl"}}>{{owner}}</a>
         </div>
         <div class="description">{{description}}</div>
         <div class="info">
             <ul>
                 <li>
-                    <span class="info" title="This project is written in {{language}}">{{language}}</span>
+                    <span class="info" {{bindAttr title="languageTitle"}}>{{language}}</span>
                 </li>
-                <li class="margin" title="{{followers}} starred this project">
+                <li class="margin" {{bindAttr title="followersTitle"}}>
                     <i class="icon-star"></i>
                     <span>{{followers}}</span>
                 </li>
-                <li class="margin" title="{{forks}} forked this project">
+                <li class="margin" {{bindAttr title="forksTitle"}}>
                     <i class="icon-git-fork"></i>
                     <span>{{forks}}</span>
                 </li>
                 <li class="margin" title="Last commit was 9 hours ago">
                     <i class="icon-circle-arrow-down"></i>
-                    <span>{{pushed_at}}</span>
+                    <span>{{pushedAt}}</span>
                 </li>
                 <li class="margin" title="This project is 2 years old">
                     <i class="icon-time"></i>
-                    <span>{{created_at}}</span>
+                    <span>{{createdAt}}</span>
                 </li>
             </ul>
         </div>

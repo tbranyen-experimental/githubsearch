@@ -5,7 +5,8 @@ requirejs.config({
         Ember: 'libs/ember',
         Handlebars: 'libs/handlebars',
         jQuery: 'libs/jquery',
-        text: 'libs/text'
+        text: 'libs/text',
+        moment: 'libs/moment'
     },
     shim: {
         Handlebars: {
@@ -14,6 +15,9 @@ requirejs.config({
         Ember: {
             deps: ['jQuery', 'Handlebars'],
             exports: 'Ember'
+        },
+        moment: {
+            exports: 'moment'
         }
     }
 });
