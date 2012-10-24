@@ -16,6 +16,7 @@ function (Ember) {
         },
 
         addRepos: function (data) {
+            this.repos = [];
             for (var i = 0, l = data.length; i < l; i++) {
                 this.addRepo(data[i]);
             }
