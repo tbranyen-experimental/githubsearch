@@ -7,6 +7,7 @@ It's based on:
 - [NodeJs](http://nodejs.org/)
 - [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
 - [EmberJs](http://emberjs.org)
+- [MomentJs](http://momentjs.com/)
 
 # Running the app
 
