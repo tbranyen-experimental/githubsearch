@@ -17,4 +17,6 @@ It's based on:
 3. To run the server: `node server/dev`
 4. [Visit the app in your browser](http://localhost:9999).
 
+<img src="https://dl.dropbox.com/u/4698556/githubsearch.png" alt="">
+
 Big thanks to <a href="https://github.com/rmurphey">Rebecca Murphy</a> for <a href="https://github.com/rmurphey/srchr-ember">srchr-ember</a>.
